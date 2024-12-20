@@ -10,17 +10,17 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 
 const navArrayLinks = [
   {
-      title: "Home",
+      title: "Inicio",
       to: "/",
       icon: <InboxIcon/>
   },
   {
-      title: "ListProducts",
+      title: "Productos",
       to: "/listProducts",
       icon: <DraftsIcon/>
   },
   {
-      title: "Create",
+      title: "Crear",
       to: "/create",
       icon: <DraftsIcon/>
   },
@@ -30,7 +30,7 @@ const navArrayLinks = [
       icon: <DraftsIcon/>
   },
   {
-      title: "Register",
+      title: "Registrate",
       to: "/register",
       icon: <DraftsIcon/>
   },

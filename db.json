@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alejandro",
+      "lastName": "Bachanian",
+      "email": "abachanian@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Juan",
+      "lastName": "Perez",
+      "email": "jperez@mail.com",
+      "password": "123456"
+    }
+  ],
+  "products": [
+    {
+      "id": "fc00",
+      "name": "Teclado Genius",
+      "brand": "Genius",
+      "category": "Repuesto",
+      "description": "Teclado en español",
+      "date": "2024-12-20",
+      "stock": "100",
+      "image": "https://www.ecelectronica.com.ar/11122-large_default/teclado-mecanico-marvo-kg962-rainbow-60-switch-blue-usb-61-teclas.jpg"
+    }
+  ]
+}
