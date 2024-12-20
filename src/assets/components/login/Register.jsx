@@ -29,7 +29,7 @@ export default function Register() {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" margin="auto">
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
         <Card>
           <CardContent>
@@ -49,6 +49,7 @@ export default function Register() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
+                    htmlFor="name"
                   />
                 </Grid>
                 <Grid size={{xs:12, md:3}}>
@@ -62,6 +63,7 @@ export default function Register() {
                     name="lastname"
                     value={form.lastname}
                     onChange={handleChange}
+                    htmlFor="lastname"
                   />
                 </Grid>
                 <Grid size={{xs:12, md:3}}>
@@ -75,6 +77,7 @@ export default function Register() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
+                    htmlFor="email"
                   />
                 </Grid>
                 <Grid size={{xs:12, md:3}}>
@@ -89,6 +92,7 @@ export default function Register() {
                     name="password"
                     value={form.password}
                     onChange={handleChange}
+                    htmlFor="password"
                   />
                 </Grid>
               </Grid>
