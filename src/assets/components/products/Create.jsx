@@ -1,18 +1,50 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, CardContent, TextField, Typography, Container, Box, MenuItem, Select } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 export default function Create() {
+
   const [form, setForm] = useState({
     name: "",
     brand: "",
     category: "",
+    subcategory: "",
     description: "",
     date: "",
     stock: "",
     image: ""
   });
+
+  const [categorys, setCategorys] = useState([])
+
+  useEffect(() => {
+    const axiosData = async () => {
+        try {
+            const response = await axios("http://localhost:3001/categorys")
+            setCategorys(response.data)
+
+        } catch (error) {
+            console.log(error);                
+        }
+    }
+    axiosData()
+  }, [])
+
+  const [subcategorys, setSubCategorys] = useState([])
+
+  useEffect(() => {
+    const axiosData = async () => {
+        try {
+            const response = await axios("http://localhost:3001/subcategorys")
+            setSubCategorys(response.data)
+
+        } catch (error) {
+            console.log(error);                
+        }
+    }
+    axiosData()
+  }, [])
 
   const handleChange = (event) => {
     const property = event.target.name;
@@ -46,8 +78,7 @@ export default function Create() {
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     label="Nombre"
                     name="name"
                     value={form.name}
@@ -60,8 +91,7 @@ export default function Create() {
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     label="Marca"
                     name="brand"
                     value={form.brand}
@@ -73,27 +103,44 @@ export default function Create() {
                   <Typography>Categoría</Typography>
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
-                  <Select
+                <Select
                     fullWidth
-                    margin="normal"
                     label="Categoría"
                     name="category"
                     value={form.category}
                     onChange={handleChange}
                     htmlFor="category"
                   >
-                    <MenuItem value="Repuesto">Repuesto</MenuItem>
-                    <MenuItem value="Insumo">Insumo</MenuItem>
-                    <MenuItem value="Hardware">Hardware</MenuItem>
+                    {categorys.map((category) => {
+                      return (<MenuItem value={category.id} key={category.id}>{category.name}</MenuItem>)})}
+                  </Select>                  
+                </Grid>                          
+                <Grid size={{xs:12, md:3}}>
+                  <Typography>Subcategoría</Typography>
+                </Grid>
+                <Grid size={{xs:12, md:9}}>
+                <Select
+                    fullWidth
+                    label="Subcategoría"
+                    name="subcategory"
+                    value={form.subcategory}
+                    onChange={handleChange}
+                    htmlFor="subcategory"
+                  >
+                    {subcategorys.map((subcategory) => (
+                      subcategory.category_id === form.category ? 
+                      <MenuItem value={subcategory.name} key={subcategory.id}>{subcategory.name}</MenuItem> 
+                      : null
+                    ))}
                   </Select>
                 </Grid>
+
                 <Grid size={{xs:12, md:3}}>
                   <Typography>Descripción del Producto</Typography>
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     label="Descripcion"
                     type="text"
                     name="description"
@@ -107,8 +154,7 @@ export default function Create() {
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     type="date"
                     name="date"
                     value={form.date}
@@ -121,8 +167,7 @@ export default function Create() {
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     label="Cantidad"
                     type="number"
                     name="stock"
@@ -136,8 +181,7 @@ export default function Create() {
                 </Grid>
                 <Grid size={{xs:12, md:9}}>
                   <TextField
-                    fullWidth
-                    margin="normal"
+                    fullWidth                    
                     label="URL"
                     name="image"
                     value={form.image}

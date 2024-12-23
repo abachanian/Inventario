@@ -20,11 +20,95 @@
       "id": "fc00",
       "name": "Teclado Genius",
       "brand": "Genius",
-      "category": "Repuesto",
+      "category": "1",
+      "subcategory": "2",
       "description": "Teclado en español",
       "date": "2024-12-20",
       "stock": "100",
       "image": "https://www.ecelectronica.com.ar/11122-large_default/teclado-mecanico-marvo-kg962-rainbow-60-switch-blue-usb-61-teclas.jpg"
+    },
+    {
+      "id": "2d15",
+      "name": "Mouse",
+      "brand": "Genius",
+      "category": "1",
+      "subcategory": "1",
+      "description": "Mouse ergonómico",
+      "date": "2024-12-20",
+      "stock": "10",
+      "image": "https://lh4.googleusercontent.com/proxy/M3SQRQ8coo2QmgXnSsnq-T_wke76W4l2H-yHEiXgC7cyrGRGz3kQjCXt5bc1afCeORkN96ceAT3FCWeG0DYQ-alWlJSQwQ"
+    },
+    {
+      "id": "f008",
+      "name": "Memoria Ram DDR4 4GB",
+      "brand": "Kingstone",
+      "category": "3",
+      "subcategory": "9",
+      "description": "Kingstone",
+      "date": "2024-12-10",
+      "stock": "5",
+      "image": "https://statics.qloud.ar/gaming-point-06-2021/221_15-11-2023-02-11-58-1116-producto-memoria-ddr4-kingston-4gb-2666mhz-kvr26n19s6-4-d-nq-np-819117-mlm29.jpg"
+    }
+  ],
+  "categorys": [
+    {
+      "id": "1",
+      "name": "Repuesto"
+    },
+    {
+      "id": "2",
+      "name": "Insumo"
+    },
+    {
+      "id": "3",
+      "name": "Hardware"
+    }
+  ],
+  "subcategorys": [
+    {
+      "id": "1",
+      "category_id": "1",
+      "name": "Mouse"
+    },
+    {
+      "id": "2",
+      "category_id": "1",
+      "name": "Teclado"
+    },
+    {
+      "id": "3",
+      "category_id": "1",
+      "name": "WebCam"
+    },
+    {
+      "id": "4",
+      "category_id": "2",
+      "name": "Toner"
+    },
+    {
+      "id": "5",
+      "category_id": "2",
+      "name": "Cartucho"
+    },
+    {
+      "id": "6",
+      "category_id": "3",
+      "name": "Motherboard"
+    },
+    {
+      "id": "7",
+      "category_id": "3",
+      "name": "Procesador"
+    },
+    {
+      "id": "8",
+      "category_id": "3",
+      "name": "Placa de video"
+    },
+    {
+      "id": "9",
+      "category_id": "3",
+      "name": "Memoria RAM"
     }
   ]
 }
