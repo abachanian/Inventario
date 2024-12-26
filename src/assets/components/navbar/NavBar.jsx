@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NavListDrawer from "./NavListDrawer";
 import { AppBar, Box, Button, Drawer, Toolbar, IconButton, Typography } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 export default function NavBar( {navArrayLinks} ) {
+
+    const { user, setUser } = useContext(UserContext);
 
     const [open, setOpen] = useState(false);
 
@@ -49,3 +52,12 @@ export default function NavBar( {navArrayLinks} ) {
         </>
     )
 }
+
+// const handleLogout = () => {
+//     setUser(null);
+//     localStorage.removeItem("isLoged");
+//     alert("Sesion Cerrada");
+// }
+
+// { user ? <button onClick={handleLogout}>Cerrar Sesion</button> : Link to="/login" }
+

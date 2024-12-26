@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import NavBar from "./assets/components/navbar/NavBar.jsx";
 import Home from "./assets/components/home/Home.jsx";
 import ListProducts from "./assets/components/products/ListProducts.jsx";
@@ -51,4 +51,4 @@ export default function App() {
     </>
   );
 }
-<Create/>
+

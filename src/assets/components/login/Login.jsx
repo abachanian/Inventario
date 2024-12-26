@@ -1,12 +1,20 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Card, CardContent, TextField, Typography, Container, Box } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 export default function Login() {
+
+    const { setUser } = useContext(UserContext);
+
+
     const [form, setForm] = useState({
         email: "",
         password: ""
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
@@ -20,7 +28,10 @@ export default function Login() {
                 (user) => user.email === form.email && user.password === form.password
             );
             if (userFound) {
+                setUser(userFound);
+                localStorage.setItem("isLoged", JSON.stringify(userFound));
                 alert("Login Exitoso");
+                navigate("/");
             } else {
                 alert("Datos erroneos");
             }

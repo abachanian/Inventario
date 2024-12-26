@@ -7,6 +7,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import App from './App.jsx'
+import { UserContextProvider } from './assets/components/context/UserContext.jsx';
 
 const theme = createTheme({
   palette: {
@@ -21,7 +22,8 @@ const theme = createTheme({
 })
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <UserContextProvider>
+    <StrictMode>
     <ThemeProvider theme={theme}>
 
       <BrowserRouter>
@@ -33,5 +35,6 @@ createRoot(document.getElementById('root')).render(
 
     </ThemeProvider>
 
-  // </StrictMode>,
+  </StrictMode>,
+  </UserContextProvider>
 )
