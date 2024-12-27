@@ -7,6 +7,7 @@ import Login from "./assets/components/login/Login.jsx";
 import Register from "./assets/components/login/Register.jsx";
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import ListProductDetails from "./assets/components/products/ListProductDetails.jsx";
 
 const navArrayLinks = [
   {
@@ -44,7 +45,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/listProducts" element={<ListProducts/>}/>
-        <Route path="/Detaill/:id" element={<ListProducts/>}/>
+        <Route path="/Detaill/:id" element={<ListProductDetails/>}/>
         <Route path="/create" element={<Create/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>

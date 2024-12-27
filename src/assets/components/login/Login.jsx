@@ -30,7 +30,6 @@ export default function Login() {
             if (userFound) {
                 setUser(userFound);
                 localStorage.setItem("isLoged", JSON.stringify(userFound));
-                alert("Login Exitoso");
                 navigate("/");
             } else {
                 alert("Datos erroneos");

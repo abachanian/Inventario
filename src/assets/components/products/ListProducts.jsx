@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 import axios from 'axios';
 import Grid from '@mui/material/Grid2';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ export default function ListProducts() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subcategory, setSubcategory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,10 +51,34 @@ export default function ListProducts() {
     navigate(`/Detaill/${id}`);
   };
 
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const filteredProducts = selectedCategory
+    ? products.filter(product => product.category === selectedCategory)
+    : products;
+
   return (
     <>
+      <FormControl fullWidth margin="normal">
+        <InputLabel id="category-select-label">Categoría</InputLabel>
+        <Select
+          labelId="category-select-label"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+          label="Categoría"
+        >
+          <MenuItem value="">
+            <em>All</em>
+          </MenuItem>
+          {category.map((cat) => (
+            <MenuItem key={cat.id} value={cat.id}>{cat.name}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
       <Grid container size={{ xs: 12, sm: 6, md: 4 }} spacing={2}>
-        {products.map((product) => {
+        {filteredProducts.map((product) => {
           return (
             <Grid key={product.id}>
               <Card sx={{ width: 345, height: 490, margin: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

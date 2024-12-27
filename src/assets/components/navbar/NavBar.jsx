@@ -17,7 +17,7 @@ export default function NavBar({ navArrayLinks }) {
 
     const filteredNavLinks = user
         ? navArrayLinks.filter(item => item.title !== "Login" && item.title !== "Registrate")
-        : navArrayLinks;
+        : navArrayLinks.filter(item => item.title !== "Crear");
 
     return (
         <>
