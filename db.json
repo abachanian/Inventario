@@ -4,14 +4,14 @@
       "id": "1",
       "name": "Alejandro",
       "lastName": "Bachanian",
-      "email": "abachanian@mail.com",
+      "email": "abachanian@gmail.com",
       "password": "123456"
     },
     {
       "id": "2",
       "name": "Juan",
       "lastName": "Perez",
-      "email": "jperez@mail.com",
+      "email": "jperez@gmail.com",
       "password": "123456"
     }
   ],
@@ -40,7 +40,7 @@
     },
     {
       "id": "f008",
-      "name": "Memoria Ram DDR4 4GB",
+      "name": "Memoria Ram DDR4",
       "brand": "Kingstone",
       "category": "3",
       "subcategory": "9",

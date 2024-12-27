@@ -41,7 +41,7 @@ export default function Login() {
     };
 
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" aria-hidden="false">
             <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
                 <Card>
                     <CardContent>

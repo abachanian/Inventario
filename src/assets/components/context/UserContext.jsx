@@ -7,7 +7,7 @@ const UserContextProvider = ( {children} ) => {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
-        const loginStorage = JSON.parse(getItem("isLoged"))
+        const loginStorage = JSON.parse(localStorage.getItem("isLoged"))
         loginStorage && setUser(loginStorage)
     }
     , []);
